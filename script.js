@@ -37,7 +37,7 @@ function addBookToLibrary() {
 
 function displayBooks() {
     // Assign a varible with the number of books in the library
-    const libraryBooks = myLibrary.length - 1
+    const libraryBooks = myLibrary.length
     // Loop through each book in the library and create a book card for it
     for (let i = 0; i < libraryBooks; i++) {
         // Select a book from the library
