@@ -49,17 +49,17 @@ function displayBooks() {
         // Create a book title and add it to the book card
         const bookCardTitle = document.createElement('div')
         bookCardTitle.classList.add('book-title')
-        bookCardTitle.textContent = 'Cool Title'
+        bookCardTitle.textContent = book.bookName
         newBookCard.appendChild(bookCardTitle)
         // Create a book author and add it to the book card
         const bookCardAuthor = document.createElement('div')
         bookCardAuthor.classList.add('book-author')
-        bookCardAuthor.textContent = 'Cool Author'
+        bookCardAuthor.textContent = book.author
         newBookCard.appendChild(bookCardAuthor)
         // Create a book page number and add it to the book card
         const bookCardPages = document.createElement('div')
         bookCardPages.classList.add('book-pages')
-        bookCardPages.textContent = '333'
+        bookCardPages.textContent = book.pages
         newBookCard.appendChild(bookCardPages)
         // Create a book read status and add it to the book card
         const bookCardReadStatus = document.createElement('div')
