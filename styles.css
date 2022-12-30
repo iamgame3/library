@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+p, h1, h2, h3, h4, h5,
+h6, button, div, input {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
 .page-container {
     height: 100vh;
     display: grid;
@@ -6,12 +13,24 @@
 
 .header {
     background-color: rgb(34, 34, 34);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-text {
+    color: white;
+    font-size: 48px;
 }
 
 .library {
     background-color: rgb(41, 41, 41);
+    padding: 32px;
 }
 
 .footer {
     background-color: rgb(34, 34, 34);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
