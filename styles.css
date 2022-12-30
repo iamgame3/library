@@ -79,3 +79,17 @@ h6, button, div, input {
     justify-content: center;
     align-items: center;
 }
+
+.new-book {
+    background-color: var(--light-grey);
+    padding: 32px;
+    border: 2px solid black;
+    border-radius: 16px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.new-book:active {
+    background-color: rgb(51, 51, 51);
+}
