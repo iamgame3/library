@@ -1,0 +1,17 @@
+.page-container {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 5fr 1fr;
+}
+
+.header {
+    background-color: rgb(34, 34, 34);
+}
+
+.library {
+    background-color: rgb(41, 41, 41);
+}
+
+.footer {
+    background-color: rgb(34, 34, 34);
+}
