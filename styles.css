@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
 
+:root {
+    --dark-grey: rgb(34, 34, 34);
+    --light-grey: rgb(41, 41, 41);
+}
+
 p, h1, h2, h3, h4, h5,
 h6, button, div, input {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
@@ -12,7 +17,7 @@ h6, button, div, input {
 }
 
 .header {
-    background-color: rgb(34, 34, 34);
+    background-color: var(--dark-grey);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,12 +29,52 @@ h6, button, div, input {
 }
 
 .library {
-    background-color: rgb(41, 41, 41);
+    background-color: var(--light-grey);
     padding: 32px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(256px, 300px));
+    gap: 32px;
+}
+
+.book-card {
+    background-color: var(--dark-grey);
+    border: 2px solid black;
+    border-radius: 16px;
+    height: 256px;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
+}
+
+.book-title, .book-author,
+.book-pages, .book-read-status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.book-title {
+    grid-column: 1 / 4;
+    color: white;
+    font-size: 36px;
+}
+
+.book-author, .book-pages,
+.book-read-status {
+    font-weight: 100;
+    font-size: 12px;
+    color: white;
+}
+
+.book-pages {
+    border-left: 1px solid var(--light-grey);
+    border-right: 1px solid var(--light-grey);
 }
 
 .footer {
-    background-color: rgb(34, 34, 34);
+    background-color: var(--dark-grey);
     display: flex;
     justify-content: center;
     align-items: center;
