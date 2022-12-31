@@ -79,16 +79,19 @@ function displayBooks() {
 
 displayBooks()
 
+// Bring up form modal when new book button is clicked
 modalButton.addEventListener('click', () => {
     modal.style.display = 'block'
 })
 
+// Close form modal if user clicks off of it
 modal.addEventListener('click', (event) => {
     if (event.target === modal) {
         modal.style.display = 'none'
     }
 })
 
+// Close form modal if user clicks X button
 modalClose.addEventListener('click', () => {
     modal.style.display = 'none'
 })
