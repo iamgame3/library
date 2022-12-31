@@ -108,6 +108,8 @@ modalClose.addEventListener('click', () => {
     modal.style.display = 'none'
 })
 
+
+// Close form modal if submit button is clicked and form is filled out
 modalSubmitButton.addEventListener('click', () => {
     // Get validity status of all text inputs
     const newName = document.getElementById('book-name').validity.valid
