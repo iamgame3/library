@@ -25,6 +25,41 @@
     </div>
   </div>
 
+  <div class="book-modal">
+    <div class="modal-content">
+      <form action="./index.html" method="get">
+        <div class="close-button-container">
+          <p class="close-button">X</p>
+        </div>
+        <div class="form-inputs">
+          <div class="form-input">
+            <label for="book-name">Book Name: *</label>
+            <input type="text" name="book-name" id="book-name" required />
+          </div>
+          <div class="form-input">
+            <label for="book-author">Author: *</label>
+            <input type="text" name="book-author" id="book-author" required />
+          </div>
+          <div class="form-input">
+            <label for="book-pages">Number of Pages: *</label>
+            <input type="text" name="book-pages" id="book-pages" required />
+          </div>
+          <div class="form-input">
+            <fieldset>
+              <legend>Status:</legend>
+              <label for="book-read-status">Read</label>
+              <input type="radio" name="book-read-status" id="book-read-status" checked />
+              <label for="book-not-read-status">Not Read</label>
+              <input type="radio" name="book-read-status" id="book-not-read-status" >
+            </fieldset>
+          </div>
+        </div>
+        <div class="submit-button-container">
+          <button type="submit" class="new-book-submit">Confirm New Book</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
 <script src="./script.js"></script>
 </body>

@@ -1,4 +1,7 @@
 const library = document.querySelector(".library")
+const modal = document.querySelector(".book-modal")
+const modalButton = document.querySelector(".new-book")
+const modalClose = document.querySelector(".close-button")
 
 const myLibrary = [
     book1 = {
@@ -75,3 +78,17 @@ function displayBooks() {
 }
 
 displayBooks()
+
+modalButton.addEventListener('click', () => {
+    modal.style.display = 'block'
+})
+
+modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+        modal.style.display = 'none'
+    }
+})
+
+modalClose.addEventListener('click', () => {
+    modal.style.display = 'none'
+})
