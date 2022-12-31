@@ -2,21 +2,22 @@ const library = document.querySelector(".library")
 const modal = document.querySelector(".book-modal")
 const modalButton = document.querySelector(".new-book")
 const modalClose = document.querySelector(".close-button")
+const modalSubmitButton = document.querySelector(".new-book-submit")
 
 const myLibrary = [
-    book1 = {
+    {
         name: "My Cool Book",
         author: "Me",
         pages: 777,
         readStatus: true
     },
-    book2 = {
+    {
         name: "My Bad Book",
         author: "Also Me",
         pages: 321,
         readStatus: true
     },
-    book3 = {
+    {
         name: "My Short Book",
         author: "Me, Again",
         pages: 123,
@@ -24,25 +25,13 @@ const myLibrary = [
     }
 ];
 
-function Book(name, author, pages, readStatus) {
-    this.name = name
-    this.author = author
-    this.pages = pages
-    this.readStatus = readStatus
-    this.info = function() {
-        return `${name} by ${author}, ${pages} pages, ${readStatus}.`
-    };
-};
-
-function addBookToLibrary() {
-    // const
-}
-
 function displayBooks() {
+    // Remove all book cards from the library
+    library.replaceChildren()
     // Assign a varible with the number of books in the library
     const libraryBooks = myLibrary.length
     // Loop through each book in the library and create a book card for it
-    for (let i = 0; i < libraryBooks; i++) {
+    for (let i = 0; i < libraryBooks; i += 1) {
         // Select a book from the library
         const book = myLibrary[i]
         // Create a book card for the selected book
@@ -62,7 +51,7 @@ function displayBooks() {
         // Create a book page number and add it to the book card
         const bookCardPages = document.createElement('div')
         bookCardPages.classList.add('book-pages')
-        bookCardPages.textContent = book.pages
+        bookCardPages.textContent = `${book.pages} Pages`
         newBookCard.appendChild(bookCardPages)
         // Create a book read status and add it to the book card
         const bookCardReadStatus = document.createElement('div')
@@ -75,6 +64,29 @@ function displayBooks() {
         // Add finished book card to the library
         library.appendChild(newBookCard)
     }
+}
+
+function addBookToLibrary() {
+    // Find values of all inputs and assign varibles to them
+    const newName = document.getElementById('book-name').value
+    const newAuthor = document.getElementById('book-author').value
+    const newPages = document.getElementById('book-pages').value
+    let newReadStatus = document.getElementById('book-read-status').checked
+    if (newReadStatus) {
+        newReadStatus = 'Read'
+    }   else {
+        newReadStatus = 'Not Read'
+    }
+    // Add new book information to the end of the library array
+    myLibrary.push(
+        {
+            name: newName,
+            author: newAuthor,
+            pages: newPages,
+            readStatus: newReadStatus
+        }
+    )
+    displayBooks()
 }
 
 displayBooks()
@@ -94,4 +106,15 @@ modal.addEventListener('click', (event) => {
 // Close form modal if user clicks X button
 modalClose.addEventListener('click', () => {
     modal.style.display = 'none'
+})
+
+modalSubmitButton.addEventListener('click', () => {
+    // Get validity status of all text inputs
+    const newName = document.getElementById('book-name').validity.valid
+    const newAuthor = document.getElementById('book-author').validity.valid
+    const newPages = document.getElementById('book-pages').validity.valid
+    // If all text inputs are filled out, close the form modal
+    if (newName && newAuthor && newPages) {
+        modal.style.display = 'none'
+    }
 })
