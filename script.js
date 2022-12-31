@@ -91,9 +91,15 @@ function addBookToLibrary() {
 
 displayBooks()
 
-// Bring up form modal when new book button is clicked
+// Bring up cleared form modal when new book button is clicked
 modalButton.addEventListener('click', () => {
+    // Show form modal
     modal.style.display = 'block'
+    // Reset all input values
+    document.getElementById('book-name').value = ''
+    document.getElementById('book-author').value = ''
+    document.getElementById('book-pages').value = ''
+    document.getElementById('book-read-status').checked = true
 })
 
 // Close form modal if user clicks off of it
