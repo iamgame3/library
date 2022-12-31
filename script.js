@@ -5,37 +5,37 @@ const modalClose = document.querySelector(".close-button")
 
 const myLibrary = [
     book1 = {
-        bookName: "My Cool Book",
+        name: "My Cool Book",
         author: "Me",
         pages: 777,
         readStatus: true
     },
     book2 = {
-        bookName: "My Bad Book",
+        name: "My Bad Book",
         author: "Also Me",
         pages: 321,
         readStatus: true
     },
     book3 = {
-        bookName: "My Short Book",
+        name: "My Short Book",
         author: "Me, Again",
         pages: 123,
         readStatus: false
     }
 ];
 
-function Book(bookName, author, pages, readStatus) {
-    this.bookName = bookName
+function Book(name, author, pages, readStatus) {
+    this.name = name
     this.author = author
     this.pages = pages
     this.readStatus = readStatus
     this.info = function() {
-        return `${bookName} by ${author}, ${pages} pages, ${readStatus}.`
+        return `${name} by ${author}, ${pages} pages, ${readStatus}.`
     };
 };
 
 function addBookToLibrary() {
-    // do stuff here
+    // const
 }
 
 function displayBooks() {
@@ -52,7 +52,7 @@ function displayBooks() {
         // Create a book title and add it to the book card
         const bookCardTitle = document.createElement('div')
         bookCardTitle.classList.add('book-title')
-        bookCardTitle.textContent = book.bookName
+        bookCardTitle.textContent = book.name
         newBookCard.appendChild(bookCardTitle)
         // Create a book author and add it to the book card
         const bookCardAuthor = document.createElement('div')
