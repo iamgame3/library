@@ -4,26 +4,7 @@ const modalButton = document.querySelector(".new-book")
 const modalClose = document.querySelector(".close-button")
 const modalSubmitButton = document.querySelector(".new-book-submit")
 
-const myLibrary = [
-    {
-        name: "My Cool Book",
-        author: "Me",
-        pages: 777,
-        readStatus: true
-    },
-    {
-        name: "My Bad Book",
-        author: "Also Me",
-        pages: 321,
-        readStatus: true
-    },
-    {
-        name: "My Short Book",
-        author: "Me, Again",
-        pages: 123,
-        readStatus: false
-    }
-];
+const myLibrary = [];
 
 function displayBooks() {
     // Remove all book cards from the library
@@ -76,6 +57,7 @@ function displayBooks() {
     }
 }
 
+// eslint-disable-next-line no-unused-vars
 function addBookToLibrary() {
     // Find values of all inputs and assign varibles to them
     const newName = document.getElementById('book-name').value
@@ -99,8 +81,6 @@ function addBookToLibrary() {
     // Redisplay all books with new book added
     displayBooks()
 }
-
-displayBooks()
 
 // Bring up cleared form modal when new book button is clicked
 modalButton.addEventListener('click', () => {
