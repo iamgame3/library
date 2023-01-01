@@ -59,14 +59,18 @@ function displayBooks() {
         bookCardPages.classList.add('book-pages')
         bookCardPages.textContent = `${book.pages} Pages`
         newBookCard.appendChild(bookCardPages)
-        // Create a book read status and add it to the book card
+        // Create a book read status
         const bookCardReadStatus = document.createElement('div')
         bookCardReadStatus.classList.add('book-read-status')
-        // Check if book has been read or not
+        // Check if book has been read or not and add it to the book card
         if (book.readStatus === true) {
         bookCardReadStatus.textContent = 'Read'
         }   else bookCardReadStatus.textContent = 'Not Read'
         newBookCard.appendChild(bookCardReadStatus)
+        // Create a book card read status toggle button and add it to the read status section of the book card
+        const bookCardReadStatusToggle = document.createElement('button')
+        bookCardReadStatusToggle.classList.add('read-status-toggle')
+        bookCardReadStatus.appendChild(bookCardReadStatusToggle)
         // Add finished book card to the library
         library.appendChild(newBookCard)
     }
@@ -144,5 +148,24 @@ window.addEventListener('click', (event) => {
         myLibrary.splice(selectedCard, 1)
         // Redisplay books without the removed book
         displayBooks()
+    }
+})
+
+// Toggle read status if respective button is pressed
+window.addEventListener('click', (event) => {
+    // Check if the user clicked on the toggle button
+    if (event.target.classList[0] === 'read-status-toggle') {
+        // Make a varible for the data number of the book card with the button the user clicked
+        const selectedBookCard = event.target.parentElement.parentElement.getAttribute('data-card-number')
+        // Check if book has been read
+        if (event.target.parentElement.textContent === 'Read') {
+            // Change read status in myLibrary array to not read and redisplay books
+            myLibrary[selectedBookCard].readStatus = false
+            displayBooks()
+        }   else {
+            // Change read status in myLibrary array to read and redisplay books
+            myLibrary[selectedBookCard].readStatus = true
+            displayBooks()
+        }
     }
 })
