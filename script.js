@@ -38,6 +38,12 @@ function displayBooks() {
         // Create a book card div
         const newBookCard = document.createElement('div')
         newBookCard.classList.add('book-card')
+        newBookCard.setAttribute('data-card-number', i)
+        // Create a remove button
+        const bookCardRemoveButton = document.createElement('div')
+        bookCardRemoveButton.classList.add('remove-button')
+        bookCardRemoveButton.textContent = 'Remove'
+        newBookCard.appendChild(bookCardRemoveButton)
         // Create a book title and add it to the book card
         const bookCardTitle = document.createElement('div')
         bookCardTitle.classList.add('book-title')
@@ -86,6 +92,7 @@ function addBookToLibrary() {
             readStatus: newReadStatus
         }
     )
+    // Redisplay all books with new book added
     displayBooks()
 }
 
@@ -124,5 +131,18 @@ modalSubmitButton.addEventListener('click', () => {
     // If all text inputs are filled out, close the form modal
     if (newName && newAuthor && newPages) {
         modal.style.display = 'none'
+    }
+})
+
+// Remove card if remove button is pressed
+window.addEventListener('click', (event) => {
+    // Check if the user clicked on the remove button
+    if (event.target.classList[0] === 'remove-button') {
+        // Make a variable for the book card that is the parent of the remove button that was clicked
+        const selectedCard = event.target.parentElement.getAttribute('data-card-number')
+        // Remove selected book card from the myLibrary array
+        myLibrary.splice(selectedCard, 1)
+        // Redisplay books without the removed book
+        displayBooks()
     }
 })

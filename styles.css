@@ -39,6 +39,7 @@ label, legend {
 }
 
 .book-card {
+    position: relative;
     background-color: var(--dark-grey);
     border: 2px solid black;
     border-radius: 16px;
@@ -47,6 +48,16 @@ label, legend {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 2fr 1fr;
+}
+
+.remove-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 100;
 }
 
 .book-title, .book-author,
