@@ -44,9 +44,7 @@ function displayBooks() {
         const bookCardReadStatus = document.createElement('div')
         bookCardReadStatus.classList.add('book-read-status')
         // Check if book has been read or not and add it to the book card
-        if (book.readStatus === true) {
-        bookCardReadStatus.textContent = 'Read'
-        }   else bookCardReadStatus.textContent = 'Not Read'
+        bookCardReadStatus.textContent = `${book.readStatus}`
         newBookCard.appendChild(bookCardReadStatus)
         // Create a book card read status toggle button and add it to the read status section of the book card
         const bookCardReadStatusToggle = document.createElement('button')
@@ -140,11 +138,11 @@ window.addEventListener('click', (event) => {
         // Check if book has been read
         if (event.target.parentElement.textContent === 'Read') {
             // Change read status in myLibrary array to not read and redisplay books
-            myLibrary[selectedBookCard].readStatus = false
+            myLibrary[selectedBookCard].readStatus = 'Not Read'
             displayBooks()
         }   else {
             // Change read status in myLibrary array to read and redisplay books
-            myLibrary[selectedBookCard].readStatus = true
+            myLibrary[selectedBookCard].readStatus = 'Read'
             displayBooks()
         }
     }
