@@ -57,6 +57,15 @@ function displayBooks() {
     }
 }
 
+class Card {
+    constructor (newName, newAuthor, newPages, newReadStatus) {
+        this.name = newName
+        this.author = newAuthor
+        this.pages = newPages
+        this.readStatus = newReadStatus
+    }
+}
+
 // eslint-disable-next-line no-unused-vars
 function addBookToLibrary() {
     // Find values of all inputs and assign varibles to them
@@ -69,15 +78,10 @@ function addBookToLibrary() {
     }   else {
         newReadStatus = 'Not Read'
     }
-    // Add new book information to the end of the library array
-    myLibrary.push(
-        {
-            name: newName,
-            author: newAuthor,
-            pages: newPages,
-            readStatus: newReadStatus
-        }
-    )
+    // Add new book information to an obejct
+    const card = new Card(newName, newAuthor, newPages, newReadStatus)
+    // Add object to end of the library array
+    myLibrary.push(card)
     // Redisplay all books with new book added
     displayBooks()
 }
