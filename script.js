@@ -43,7 +43,6 @@ function displayBooks() {
         // Create a book read status
         const bookCardReadStatus = document.createElement('div')
         bookCardReadStatus.classList.add('book-read-status')
-        // Check if book has been read or not and add it to the book card
         bookCardReadStatus.textContent = `${book.readStatus}`
         newBookCard.appendChild(bookCardReadStatus)
         // Create a book card read status toggle button and add it to the read status section of the book card
